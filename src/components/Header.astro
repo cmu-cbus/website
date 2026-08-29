@@ -21,11 +21,11 @@ const isActive = (href: string) =>
       <Image
         src={logo}
         alt="CBUS Logo"
-        class="h-15 w-auto object-contain"
+        class="h-20 w-auto object-contain"
       />
     </a>
 
-    <nav aria-label="Primary" class="flex items-center gap-6 font-sans text-sm">
+    <nav aria-label="Primary" class="flex items-center gap-6 font-sans text-lg mt-1">
       {navItems.map((item) => {
         const active = isActive(item.href);
         return (

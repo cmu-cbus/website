@@ -48,6 +48,4 @@ const resources = defineCollection({
   }),
 });
 
-
-
 export const collections = { events, board, resources };

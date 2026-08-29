@@ -28,19 +28,19 @@ const emailHref = email ? (email.startsWith('mailto:') ? email : `mailto:${email
   <img
     src={image}
     alt={name}
-    class="h-28 w-28 shrink-0 rounded-lg border border-ink/10 object-cover sm:h-32 sm:w-32"
+    class="h-40 w-40 shrink-0 rounded-lg border border-ink/10 object-cover sm:h-45 sm:w-45"
     loading="lazy"
   />
 
   <div class="flex flex-1 flex-col justify-between">
     <div>
-      <span class="text-xs font-semibold uppercase tracking-wider text-accent">
+      <span class="text-base font-semibold uppercase tracking-wider text-accent">
         {role}
       </span>
-      <h3 class="font-serif text-xl font-medium text-ink">
+      <h3 class="font-serif text-3xl font-medium text-ink">
         {name}
       </h3>
-      <p class="mt-2 text-sm leading-relaxed text-ink/80">
+      <p class="mt-2 text-lg leading-relaxed text-ink/80">
         {bio}
       </p>
     </div>
@@ -50,18 +50,18 @@ const emailHref = email ? (email.startsWith('mailto:') ? email : `mailto:${email
         href={coffeeChat}
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex items-center gap-1.5 rounded-full border border-ink/10 bg-surface/60 px-3 py-1 text-xs font-medium text-ink transition-all hover:border-accent/40 hover:bg-surface hover:text-accent"
+        class="inline-flex items-center gap-1.5 rounded-full border border-ink/10 bg-surface/60 px-3 py-1 text-base font-medium text-ink transition-all hover:border-accent/40 hover:bg-surface hover:text-accent"
       >
-        <IconCoffee size={14} />
+        <IconCoffee size={18} />
         <span>Coffee Chat</span>
       </a>
 
       {emailHref && (
         <a
           href={emailHref}
-          class="inline-flex items-center gap-1.5 rounded-full border border-ink/10 bg-surface/60 px-3 py-1 text-xs font-medium text-ink transition-all hover:border-accent/40 hover:bg-surface hover:text-accent"
+          class="inline-flex items-center gap-1.5 rounded-full border border-ink/10 bg-surface/60 px-3 py-1 text-base font-medium text-ink transition-all hover:border-accent/40 hover:bg-surface hover:text-accent"
         >
-          <IconMail size={14} />
+          <IconMail size={18} />
           <span>Email</span>
         </a>
       )}
@@ -71,9 +71,9 @@ const emailHref = email ? (email.startsWith('mailto:') ? email : `mailto:${email
           href={linkedin}
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-1.5 rounded-full border border-ink/10 bg-surface/60 px-3 py-1 text-xs font-medium text-ink transition-all hover:border-accent/40 hover:bg-surface hover:text-accent"
+          class="inline-flex items-center gap-1.5 rounded-full border border-ink/10 bg-surface/60 px-3 py-1 text-base font-medium text-ink transition-all hover:border-accent/40 hover:bg-surface hover:text-accent"
         >
-          <IconBrandLinkedin size={14} />
+          <IconBrandLinkedin size={18} />
           <span>LinkedIn</span>
         </a>
       )}
@@ -83,9 +83,9 @@ const emailHref = email ? (email.startsWith('mailto:') ? email : `mailto:${email
           href={github}
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-1.5 rounded-full border border-ink/10 bg-surface/60 px-3 py-1 text-xs font-medium text-ink transition-all hover:border-accent/40 hover:bg-surface hover:text-accent"
+          class="inline-flex items-center gap-1.5 rounded-full border border-ink/10 bg-surface/60 px-3 py-1 text-base font-medium text-ink transition-all hover:border-accent/40 hover:bg-surface hover:text-accent"
         >
-          <IconBrandGithub size={14} />
+          <IconBrandGithub size={18} />
           <span>GitHub</span>
         </a>
       )}
@@ -95,9 +95,9 @@ const emailHref = email ? (email.startsWith('mailto:') ? email : `mailto:${email
           href={website}
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-1.5 rounded-full border border-ink/10 bg-surface/60 px-3 py-1 text-xs font-medium text-ink transition-all hover:border-accent/40 hover:bg-surface hover:text-accent"
+          class="inline-flex items-center gap-1.5 rounded-full border border-ink/10 bg-surface/60 px-3 py-1 text-base font-medium text-ink transition-all hover:border-accent/40 hover:bg-surface hover:text-accent"
         >
-          <IconWorld size={14} />
+          <IconWorld size={18} />
           <span>Website</span>
         </a>
       )}

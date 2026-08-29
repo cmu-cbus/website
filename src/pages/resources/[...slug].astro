@@ -20,25 +20,25 @@ const { Content } = await render(entry);
 >
   <a
     href="/resources"
-    class="inline-flex items-center gap-1 font-mono text-[11px] text-muted hover:text-accent transition-colors mb-8"
+    class="inline-flex items-center gap-1 font-mono text-base text-muted hover:text-accent transition-colors mb-8"
   >
-    <IconArrowLeft size={13} aria-hidden="true" />
+    <IconArrowLeft size={18} aria-hidden="true" />
     All resources
   </a>
 
-  <div class="mb-6">
-    <p class="font-mono text-[11px] uppercase tracking-wide text-accent mb-2">
+  <div class="mb-8">
+    <p class="font-mono text-base uppercase tracking-wide text-accent mb-3">
       {entry.data.section}
     </p>
-    <h1 class="font-serif text-3xl font-medium text-ink">
+    <h1 class="font-serif text-6xl font-medium text-ink">
       {entry.data.title}
     </h1>
     {entry.data.author && (
-      <p class="mt-1 text-xs text-muted">By {entry.data.author}</p>
+      <p class="mt-2 text-lg text-muted">By {entry.data.author}</p>
     )}
   </div>
 
-  <div class="prose prose-sm max-w-none
+  <div class="prose prose-lg max-w-none
     prose-headings:font-serif prose-headings:text-ink prose-headings:font-medium prose-headings:tracking-tight
     prose-p:text-ink/90
     prose-a:text-accent prose-a:underline prose-a:underline-offset-2

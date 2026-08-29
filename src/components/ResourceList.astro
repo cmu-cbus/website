@@ -18,6 +18,7 @@ for (const list of sections.values()) {
   list.sort((a, b) => b.data.priority - a.data.priority);
 }
 ---
+
 <div class="mb-8 relative">
   <IconSearch size={15} class="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-muted" aria-hidden="true" />
   <input
@@ -25,14 +26,14 @@ for (const list of sections.values()) {
     id="resource-search"
     placeholder="Search resources…"
     aria-label="Search resources"
-    class="w-full rounded-xl border border-ink/20 bg-surface/30 py-2 pl-9 pr-4 font-sans text-sm text-ink placeholder:text-muted focus:outline-none focus:border-accent transition-colors"
+    class="w-full rounded-xl border border-ink/20 bg-surface/30 py-2 pl-9 pr-4 font-sans text-lg text-ink placeholder:text-muted focus:outline-none focus:border-accent transition-colors"
   />
 </div>
 
 <div class="space-y-6" id="resource-groups">
   {Array.from(sections.entries()).map(([section, items]) => (
     <div class="resource-group">
-      <h2 class="font-mono text-xs uppercase tracking-wide text-muted mb-1">{section}</h2>
+      <h2 class="font-mono text-base uppercase tracking-wide text-muted mb-1">{section}</h2>
       <ul class="divide-y divide-ink/10">
         {items.map((item) => {
           const isExternal = Boolean(item.data.url);
@@ -46,17 +47,17 @@ for (const list of sections.values()) {
                 class="group flex items-center justify-between gap-4 py-3"
               >
                 <span>
-                  <span class="block text-sm font-medium text-ink group-hover:text-accent transition-colors">
+                  <span class="block text-lg font-medium text-ink group-hover:text-accent transition-colors">
                     {item.data.title}
                   </span>
                   {item.data.description && (
-                    <span class="block text-xs text-muted mt-0.5">{item.data.description}</span>
+                    <span class="block text-base text-muted mt-0.5">{item.data.description}</span>
                   )}
                 </span>
                 {isExternal ? (
-                  <IconExternalLink size={15} class="shrink-0 text-muted group-hover:text-accent transition-colors" aria-hidden="true" />
+                  <IconExternalLink size={20} class="shrink-0 text-muted group-hover:text-accent transition-colors" aria-hidden="true" />
                 ) : (
-                  <IconChevronRight size={15} class="shrink-0 text-muted group-hover:text-accent transition-colors" aria-hidden="true" />
+                  <IconChevronRight size={20} class="shrink-0 text-muted group-hover:text-accent transition-colors" aria-hidden="true" />
                 )}
               </a>
             </li>
@@ -67,7 +68,7 @@ for (const list of sections.values()) {
   ))}
 </div>
 
-<p id="resource-empty" class="hidden text-sm text-muted">No matching resources.</p>
+<p id="resource-empty" class="hidden text-lg text-muted">No matching resources.</p>
 
 <script>
   const input = document.getElementById('resource-search') as HTMLInputElement | null;
