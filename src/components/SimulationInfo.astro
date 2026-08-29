@@ -2,62 +2,71 @@
 import { IconHelp, IconX } from '@tabler/icons-astro';
 ---
 
-<details class="group fixed bottom-15 right-12 sm:bottom-20 sm:right-15 z-40 pointer-events-auto select-none">
-  <summary
-    class="flex h-14 w-14 cursor-pointer list-none items-center justify-center rounded-full border border-border bg-surface/90 text-muted shadow-lg backdrop-blur transition-all duration-200 hover:scale-105 hover:border-accent hover:bg-accent hover:text-white hover:shadow-accent/25 group-open:border-accent group-open:bg-accent group-open:text-white [&::-webkit-details-marker]:hidden"
-    aria-label="What is this background?"
+<div class="fixed bottom-15 right-12 sm:bottom-20 sm:right-15 z-40 flex items-center gap-3">
+  <div
+    id="sim-hint"
+    class="hidden opacity-0 sm:flex items-center gap-1 rounded-full border border-accent/20 bg-surface px-4 py-2 text-sm font-medium text-ink shadow-md transition-opacity duration-300"
   >
-    <IconHelp size={28} aria-hidden="true" />
-  </summary>
-
-  <div class="absolute bottom-16 right-0 w-96 sm:w-[28rem] rounded-2xl border border-border bg-surface p-6 text-base leading-relaxed text-ink shadow-2xl transition-all">
-    <button
-      type="button"
-      data-sim-close
-      class="absolute right-4 top-4 rounded-lg p-1.5 text-muted transition-colors hover:bg-accent/10 hover:text-accent"
-      aria-label="Close panel"
-    >
-      <IconX size={18} aria-hidden="true" />
-    </button>
-
-    <div class="mb-4 flex items-center gap-2 font-mono text-base font-semibold text-accent">
-      <span class="h-2.5 w-2.5 rounded-full bg-accent animate-pulse"></span>
-      Reaction-Diffusion Simulation
-    </div>
-
-    <div class="space-y-3 text-base text-muted leading-relaxed" data-sim-description>
-      <p>
-        In 1952, <a href="https://doi.org/10.1098/rstb.1952.0012"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="font-medium text-accent underline decoration-accent/40 underline-offset-2 hover:decoration-accent"
-          >Alan Turing showed</a
-        > how two diffusing chemicals reacting together can produce biological patterns like zebra stripes and leopard spots.
-      </p>
-
-      <p>
-        This background is a live WebGL2 <a href="https://doi.org/10.1016/0009-2509(83)80132-8"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="font-medium text-accent underline decoration-accent/40 underline-offset-2 hover:decoration-accent"
-          >Gray–Scott model</a
-        >. Chemical <var class="font-serif italic font-semibold text-ink">U</var> feeds into chemical <var class="font-serif italic font-semibold text-ink">V</var>, forming self-organizing structures.
-      </p>
-
-      <p class="font-medium text-ink/80">
-        Click or drag anywhere on screen to inject chemical <var class="font-serif italic font-semibold text-ink">V</var> into the system.
-      </p>
-    </div>
-
-    <button
-      type="button"
-      data-sim-toggle
-      class="mt-5 flex w-full items-center justify-center rounded-lg border border-accent/20 bg-accent/10 py-3 text-base font-semibold text-accent transition-colors hover:bg-accent hover:text-white"
-    >
-      Don't like it? Turn it off
-    </button>
+    Curious what this is?
   </div>
-</details>
+
+  <details class="group relative pointer-events-auto select-none">
+    <summary
+      class="flex h-14 w-14 cursor-pointer list-none items-center justify-center rounded-full border border-border bg-surface/90 text-muted shadow-lg backdrop-blur transition-all duration-200 hover:scale-105 hover:border-accent hover:bg-accent hover:text-white hover:shadow-accent/25 group-open:border-accent group-open:bg-accent group-open:text-white [&::-webkit-details-marker]:hidden"
+      aria-label="What is this background?"
+    >
+      <IconHelp size={28} aria-hidden="true" />
+    </summary>
+
+    <div class="absolute bottom-16 right-0 w-96 sm:w-[28rem] rounded-2xl border border-border bg-surface p-6 text-base leading-relaxed text-ink shadow-2xl transition-all">
+      <button
+        type="button"
+        data-sim-close
+        class="absolute right-4 top-4 rounded-lg p-1.5 text-muted transition-colors hover:bg-accent/10 hover:text-accent"
+        aria-label="Close panel"
+      >
+        <IconX size={18} aria-hidden="true" />
+      </button>
+
+      <div class="mb-4 flex items-center gap-2 font-mono text-base font-semibold text-accent">
+        <span class="h-2.5 w-2.5 rounded-full bg-accent animate-pulse"></span>
+        Reaction-Diffusion Simulation
+      </div>
+
+      <div class="space-y-3 text-base text-muted leading-relaxed" data-sim-description>
+        <p>
+          In 1952, <a href="https://doi.org/10.1098/rstb.1952.0012"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="font-medium text-accent underline decoration-accent/40 underline-offset-2 hover:decoration-accent"
+            >Alan Turing showed</a
+          > how two diffusing chemicals reacting together can produce biological patterns like zebra stripes and leopard spots.
+        </p>
+
+        <p>
+          This background is a live WebGL2 <a href="https://doi.org/10.1016/0009-2509(83)80132-8"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="font-medium text-accent underline decoration-accent/40 underline-offset-2 hover:decoration-accent"
+            >Gray–Scott model</a
+          >. Chemical <var class="font-serif italic font-semibold text-ink">U</var> feeds into chemical <var class="font-serif italic font-semibold text-ink">V</var>, forming self-organizing structures.
+        </p>
+
+        <p class="font-medium text-ink/80">
+          Click or drag anywhere on screen to inject chemical <var class="font-serif italic font-semibold text-ink">V</var> into the system.
+        </p>
+      </div>
+
+      <button
+        type="button"
+        data-sim-toggle
+        class="mt-5 flex w-full items-center justify-center rounded-lg border border-accent/20 bg-accent/10 py-3 text-base font-semibold text-accent transition-colors hover:bg-accent hover:text-white"
+      >
+        Don't like it? Turn it off
+      </button>
+    </div>
+  </details>
+</div>
 
 <style>
   summary::marker {
@@ -67,11 +76,13 @@ import { IconHelp, IconX } from '@tabler/icons-astro';
 
 <script>
   const SIM_STORAGE_KEY = 'cbus:simulation-enabled';
+  const HINT_SEEN_KEY = 'cbus:simulation-hint-seen';
 
   const details = document.querySelector<HTMLDetailsElement>('details');
   const description = document.querySelector('[data-sim-description]');
   const toggle = document.querySelector<HTMLButtonElement>('[data-sim-toggle]');
   const closeBtn = document.querySelector<HTMLButtonElement>('[data-sim-close]');
+  const hint = document.querySelector<HTMLElement>('#sim-hint');
 
   ['pointerdown', 'pointermove', 'pointerup'].forEach((eventType) => {
     details?.addEventListener(eventType, (e) => e.stopPropagation());
@@ -87,6 +98,20 @@ import { IconHelp, IconX } from '@tabler/icons-astro';
       toggle.textContent = 'Turn simulation back on';
     }
   }
+
+  function dismissHint() {
+    if (!hint) return;
+    hint.classList.add('opacity-0', 'pointer-events-none');
+    localStorage.setItem(HINT_SEEN_KEY, 'true');
+  }
+
+  if (hint && !localStorage.getItem(HINT_SEEN_KEY)) {
+    hint.classList.remove('opacity-0');
+  }
+
+  details?.addEventListener('toggle', () => {
+    if (details.open) dismissHint();
+  });
 
   closeBtn?.addEventListener('click', (e) => {
     e.preventDefault();
