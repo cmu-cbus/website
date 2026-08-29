@@ -1,0 +1,52 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { IconArrowLeft } from '@tabler/icons-astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const pages = await getCollection('resources', ({ data }) => !data.url);
+  return pages.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+<Layout
+  title={`${entry.data.title} | CMU CBUS Resources`}
+  description={entry.data.description ?? `${entry.data.title} — part of the CMU CBUS resources guide.`}
+>
+  <a
+    href="/resources"
+    class="inline-flex items-center gap-1 font-mono text-[11px] text-muted hover:text-accent transition-colors mb-8"
+  >
+    <IconArrowLeft size={13} aria-hidden="true" />
+    All resources
+  </a>
+
+  <div class="mb-6">
+    <p class="font-mono text-[11px] uppercase tracking-wide text-accent mb-2">
+      {entry.data.section}
+    </p>
+    <h1 class="font-serif text-3xl font-medium text-ink">
+      {entry.data.title}
+    </h1>
+    {entry.data.author && (
+      <p class="mt-1 text-xs text-muted">By {entry.data.author}</p>
+    )}
+  </div>
+
+  <div class="prose prose-sm max-w-none
+    prose-headings:font-serif prose-headings:text-ink prose-headings:font-medium prose-headings:tracking-tight
+    prose-p:text-ink/90
+    prose-a:text-accent prose-a:underline prose-a:underline-offset-2
+    prose-strong:text-ink
+    prose-code:font-mono prose-code:text-ink prose-code:bg-accent-soft prose-code:rounded prose-code:px-1 prose-code:py-0.5 prose-code:before:content-none prose-code:after:content-none
+    prose-li:text-ink/90
+    prose-hr:border-ink/10
+    prose-blockquote:border-accent/40 prose-blockquote:text-muted">
+    <Content />
+  </div>
+</Layout>

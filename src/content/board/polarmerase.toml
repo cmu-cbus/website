@@ -1,0 +1,10 @@
+name = "Polarmerase"
+role = "Mascot"
+priority = 100
+image = "/icon-512.png"
+bio = "The official CBUS mascot!"
+coffeeChat = "https://calendly.com/cmu-cbus"
+email = "cbus@andrew.cmu.edu"
+github = "https://github.com/cmu-cbus"
+linkedin = "https://linkedin.com/in/cmu-cbus"
+website = "https://cmu-cbus.org"

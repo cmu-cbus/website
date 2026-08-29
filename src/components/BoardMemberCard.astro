@@ -1,0 +1,106 @@
+---
+import {
+  IconCoffee,
+  IconMail,
+  IconWorld,
+  IconBrandLinkedin,
+  IconBrandGithub
+} from '@tabler/icons-astro';
+
+interface Props {
+  name: string;
+  role: string;
+  image: string;
+  bio: string;
+  coffeeChat: string;
+  email?: string;
+  linkedin?: string;
+  github?: string;
+  website?: string;
+}
+
+const { name, role, image, bio, coffeeChat, email, linkedin, github, website } = Astro.props;
+
+const emailHref = email ? (email.startsWith('mailto:') ? email : `mailto:${email}`) : null;
+---
+
+<div class="pointer-events-auto flex flex-col gap-5 rounded-xl border border-ink/10 bg-surface/40 p-5 transition-all hover:border-accent/40 hover:bg-surface sm:flex-row sm:items-start sm:p-6">
+  <img
+    src={image}
+    alt={name}
+    class="h-28 w-28 shrink-0 rounded-lg border border-ink/10 object-cover sm:h-32 sm:w-32"
+    loading="lazy"
+  />
+
+  <div class="flex flex-1 flex-col justify-between">
+    <div>
+      <span class="text-xs font-semibold uppercase tracking-wider text-accent">
+        {role}
+      </span>
+      <h3 class="font-serif text-xl font-medium text-ink">
+        {name}
+      </h3>
+      <p class="mt-2 text-sm leading-relaxed text-ink/80">
+        {bio}
+      </p>
+    </div>
+
+    <div class="mt-4 flex flex-wrap items-center gap-2">
+      <a
+        href={coffeeChat}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-1.5 rounded-full border border-ink/10 bg-surface/60 px-3 py-1 text-xs font-medium text-ink transition-all hover:border-accent/40 hover:bg-surface hover:text-accent"
+      >
+        <IconCoffee size={14} />
+        <span>Coffee Chat</span>
+      </a>
+
+      {emailHref && (
+        <a
+          href={emailHref}
+          class="inline-flex items-center gap-1.5 rounded-full border border-ink/10 bg-surface/60 px-3 py-1 text-xs font-medium text-ink transition-all hover:border-accent/40 hover:bg-surface hover:text-accent"
+        >
+          <IconMail size={14} />
+          <span>Email</span>
+        </a>
+      )}
+
+      {linkedin && (
+        <a
+          href={linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-1.5 rounded-full border border-ink/10 bg-surface/60 px-3 py-1 text-xs font-medium text-ink transition-all hover:border-accent/40 hover:bg-surface hover:text-accent"
+        >
+          <IconBrandLinkedin size={14} />
+          <span>LinkedIn</span>
+        </a>
+      )}
+
+      {github && (
+        <a
+          href={github}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-1.5 rounded-full border border-ink/10 bg-surface/60 px-3 py-1 text-xs font-medium text-ink transition-all hover:border-accent/40 hover:bg-surface hover:text-accent"
+        >
+          <IconBrandGithub size={14} />
+          <span>GitHub</span>
+        </a>
+      )}
+
+      {website && (
+        <a
+          href={website}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-1.5 rounded-full border border-ink/10 bg-surface/60 px-3 py-1 text-xs font-medium text-ink transition-all hover:border-accent/40 hover:bg-surface hover:text-accent"
+        >
+          <IconWorld size={14} />
+          <span>Website</span>
+        </a>
+      )}
+    </div>
+  </div>
+</div>

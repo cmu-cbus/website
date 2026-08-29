@@ -1,0 +1,30 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ResourceList from '../../components/ResourceList.astro';
+import { getCollection } from 'astro:content';
+
+const entries = await getCollection('resources');
+---
+<Layout
+  title="Resources | CMU CBUS"
+  description="Courses, research, and getting involved in CMU CBUS."
+>
+  <header class="mb-6">
+    <h1 class="font-serif text-3xl font-medium text-ink sm:text-4xl">
+      Resources
+    </h1>
+    <p class="mt-2 text-sm text-muted">
+      Courses, research, and getting involved.
+    </p>
+  </header>
+
+  {entries.length > 0 ? (
+    <ResourceList entries={entries} />
+  ) : (
+    <p class="text-sm text-muted">Resources are coming soon.</p>
+  )}
+
+  <p class="mt-10 text-xs text-muted">
+    Missing something? Open a pull request on <a href="https://github.com/cmu-cbus/cbus-website" class="text-accent hover:underline">GitHub</a>, or contact a board member if you're not sure how.
+  </p>
+</Layout>

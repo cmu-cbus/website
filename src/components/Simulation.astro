@@ -11,7 +11,7 @@ const {
   feed = 0.0260,
   kill = 0.0550,
   opacity = 0.3,
-  substeps = 4,
+  substeps = 3,
   blobs = 1,
 } = Astro.props;
 ---
@@ -41,7 +41,6 @@ const {
     const canvas = wrapper && wrapper.querySelector('.rd-canvas');
     if (!canvas) return;
 
-    // Check if simulation is disabled in localStorage
     if (localStorage.getItem('cbus:simulation-enabled') === 'false') {
       if (wrapper) wrapper.style.display = 'none';
       return;
@@ -132,7 +131,6 @@ const {
     uniform float u_seed;
     uniform int u_blobCount;
 
-    // Cheap 2D hash -> [0,1), used only to scatter seed blobs.
     float hash(vec2 p) {
       p = fract(p * vec2(123.34, 456.21));
       p += dot(p, p + 45.32);
@@ -313,6 +311,11 @@ const {
     }
 
     function seedFromEvent(e) {
+      const target = e.target;
+      if (target && target.closest('header, nav, a, button')) {
+        return;
+      }
+
       const rect = canvas.getBoundingClientRect();
       const relX = (e.clientX - rect.left) / rect.width;
       const relY = 1.0 - (e.clientY - rect.top) / rect.height;
@@ -321,7 +324,6 @@ const {
       inject.active = true;
       inject.framesLeft = INJECT_HOLD_FRAMES;
     }
-
     function onPointerDown(e) {
       paintDown = true;
       seedFromEvent(e);
