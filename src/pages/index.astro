@@ -2,14 +2,16 @@
 import Layout from "../layouts/Layout.astro";
 import Simulation from "../components/Simulation.astro";
 import SimulationInfo from "../components/SimulationInfo.astro";
-import { Users, MessageSquare } from "@lucide/astro";
+import { IconUsers, IconBrandSlack } from "@tabler/icons-astro";
 ---
 
-<Layout title="CMU Computational Biology Society">
-  <Simulation />
+<Layout>
+  <div class="hidden md:block">
+    <Simulation />
+  </div>
 
   <div class="space-y-16">
-    <section class="text-center space-y-5 max-w-xl mx-auto pt-2">
+    <section class="text-center space-y-5 max-w-xl mx-auto">
       <p class="font-mono text-xs text-accent tracking-wide">
         &gt; ATGCGGTACCATGGCTAGC<span class="animate-blink inline-block text-accent font-bold">_</span>
       </p>
@@ -23,31 +25,32 @@ import { Users, MessageSquare } from "@lucide/astro";
       </p>
 
       <div class="pt-2 flex items-center justify-center gap-3">
-        <!-- TartanConnect -->
         <a
           href="https://tartanconnect.cmu.edu/cbs/club_signup"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 rounded-xl border border-accent bg-transparent px-5 py-2 font-sans text-sm font-medium text-accent transition-colors hover:bg-accent-soft"
+          class="inline-flex items-center gap-1.5 rounded-xl border border-accent bg-bg px-5 py-2 font-sans text-sm font-medium text-accent transition-colors hover:bg-accent-soft"
         >
-          <Users size={16} aria-hidden="true" />
+          <IconUsers size={16} aria-hidden="true" />
           <span>TartanConnect</span>
         </a>
 
-        <!-- Slack -->
         <a
           href="https://cmu-cbus.slack.com"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 rounded-xl border border-ink/20 bg-surface/30 px-5 py-2 font-sans text-sm font-medium text-ink shadow-2xs transition-all hover:border-accent hover:text-accent"
+          class="inline-flex items-center gap-1.5 rounded-xl border border-ink/20 bg-[#fcfaf9] px-5 py-2 font-sans text-sm font-medium text-ink/90 shadow-2xs transition-all hover:border-accent hover:text-accent"
         >
-          <MessageSquare size={16} aria-hidden="true" />
+          <IconBrandSlack size={16} aria-hidden="true" />
           <span>Slack</span>
         </a>
       </div>
     </section>
   </div>
-  <SimulationInfo />
+
+  <div class="hidden md:block">
+    <SimulationInfo />
+  </div>
 </Layout>
 
 <style>

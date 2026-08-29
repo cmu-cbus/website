@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import BoardMemberCard from '../components/BoardMemberCard.astro';
+
+const allMembers = await getCollection('board');
+const boardMembers = allMembers.sort((a, b) => {
+  if (b.data.priority !== a.data.priority) {
+    return b.data.priority - a.data.priority;
+  }
+  return a.data.name.localeCompare(b.data.name);
+});
+---
+
+<Layout
+  title="Board | CMU CBUS"
+  description="Meet the executive board and officers of the CMU Computational Biology Undergraduate Society."
+>
+  <header class="mb-10">
+    <h1 class="font-serif text-3xl font-medium text-ink sm:text-4xl">
+      Board
+    </h1>
+    <p class="mt-2 text-sm text-muted">
+      Meet the board leading CMU CBUS this academic year. Feel free to reach out for a coffee chat!
+    </p>
+  </header>
+
+  {boardMembers.length > 0 ? (
+    <div class="flex flex-col gap-6">
+      {boardMembers.map((member) => (
+        <BoardMemberCard {...member.data} />
+      ))}
+    </div>
+  ) : (
+    <p class="text-sm text-muted">Board members will be announced soon.</p>
+  )}
+</Layout>

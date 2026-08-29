@@ -1,5 +1,5 @@
 ---
-import { CircleQuestionMark, X } from '@lucide/astro';
+import { IconHelp, IconX } from '@tabler/icons-astro';
 ---
 
 <details class="group fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-40 pointer-events-auto select-none">
@@ -7,7 +7,7 @@ import { CircleQuestionMark, X } from '@lucide/astro';
     class="flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-full border border-border bg-surface/90 text-muted shadow-lg backdrop-blur transition-all duration-200 hover:scale-105 hover:border-accent hover:bg-accent hover:text-white hover:shadow-accent/25 group-open:border-accent group-open:bg-accent group-open:text-white [&::-webkit-details-marker]:hidden"
     aria-label="What is this background?"
   >
-    <CircleQuestionMark size={20} aria-hidden="true" />
+    <IconHelp size={20} aria-hidden="true" />
   </summary>
 
   <div class="absolute bottom-12 right-0 w-72 sm:w-80 rounded-2xl border border-border bg-surface p-4 text-xs leading-relaxed text-ink shadow-2xl transition-all">
@@ -17,7 +17,7 @@ import { CircleQuestionMark, X } from '@lucide/astro';
       class="absolute right-3 top-3 rounded-lg p-1 text-muted transition-colors hover:bg-accent/10 hover:text-accent"
       aria-label="Close panel"
     >
-      <X size={14} aria-hidden="true" />
+      <IconX size={14} aria-hidden="true" />
     </button>
 
     <div class="mb-2 flex items-center gap-2 font-mono text-[11px] font-semibold text-accent">
@@ -86,7 +86,7 @@ import { CircleQuestionMark, X } from '@lucide/astro';
     if (isEnabled()) {
       toggle.textContent = "Don't like it? Turn it off";
     } else {
-      toggle.textContent = 'Turn background back on';
+      toggle.textContent = 'Turn simulation back on';
     }
   }
 

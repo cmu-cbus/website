@@ -1,0 +1,50 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import EventCard from '../components/EventCard.astro';
+import { IconCalendar } from '@tabler/icons-astro';
+
+const today = new Date();
+today.setHours(0, 0, 0, 0);
+
+const allEvents = await getCollection('events');
+const events = allEvents
+  .filter((event) => new Date(event.data.date) >= today)
+  .sort((a, b) => new Date(a.data.date).getTime() - new Date(b.data.date).getTime());
+---
+
+<Layout
+  title="Events | CMU CBUS"
+  description="Upcoming events, workshops, and socials hosted by the CMU Computational Biology Undergraduate Society."
+>
+  <header class="mb-10 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+    <div>
+      <h1 class="font-serif text-3xl font-medium text-ink sm:text-4xl">
+        Events
+      </h1>
+      <p class="mt-2 text-sm text-muted">
+        Upcoming socials, workshops, and academic events.
+      </p>
+    </div>
+
+    <a
+      href=""
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex w-fit items-center gap-2 rounded-lg border border-ink/10 bg-surface/40 px-3 py-1.5 text-xs font-medium text-ink transition-all hover:border-accent/40 hover:bg-surface hover:text-accent"
+    >
+      <IconCalendar size={14} />
+      <span>Subscribe to Calendar</span>
+    </a>
+  </header>
+
+  {events.length > 0 ? (
+    <div class="grid gap-6 sm:grid-cols-2">
+      {events.map((event) => (
+        <EventCard {...event.data} />
+      ))}
+    </div>
+  ) : (
+    <p class="text-sm text-muted">No upcoming events right now. Check back soon!</p>
+  )}
+</Layout>
