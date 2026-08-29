@@ -1,17 +1,62 @@
 ---
-
+import Layout from "../layouts/Layout.astro";
+import Simulation from "../components/Simulation.astro";
+import SimulationInfo from "../components/SimulationInfo.astro";
+import { Users, MessageSquare } from "@lucide/astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="CMU Computational Biology Society">
+  <Simulation />
+
+  <div class="space-y-16">
+    <section class="text-center space-y-5 max-w-xl mx-auto pt-2">
+      <p class="font-mono text-xs text-accent tracking-wide">
+        &gt; ATGCGGTACCATGGCTAGC<span class="animate-blink inline-block text-accent font-bold">_</span>
+      </p>
+
+      <h1 class="font-serif text-4xl sm:text-5xl text-ink font-semibold leading-tight tracking-tight">
+        Computational Biology Undergraduate Society
+      </h1>
+
+      <p class="text-muted text-base sm:text-lg leading-relaxed font-normal">
+        We're a student-run organization advancing computational biology at Carnegie Mellon. We host academic and social events, connect students to opportunities, and advocate for them in the department.
+      </p>
+
+      <div class="pt-2 flex items-center justify-center gap-3">
+        <!-- TartanConnect -->
+        <a
+          href="https://tartanconnect.cmu.edu/cbs/club_signup"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 rounded-xl border border-accent bg-transparent px-5 py-2 font-sans text-sm font-medium text-accent transition-colors hover:bg-accent-soft"
+        >
+          <Users size={16} aria-hidden="true" />
+          <span>TartanConnect</span>
+        </a>
+
+        <!-- Slack -->
+        <a
+          href="https://cmu-cbus.slack.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 rounded-xl border border-ink/20 bg-surface/30 px-5 py-2 font-sans text-sm font-medium text-ink shadow-2xs transition-all hover:border-accent hover:text-accent"
+        >
+          <MessageSquare size={16} aria-hidden="true" />
+          <span>Slack</span>
+        </a>
+      </div>
+    </section>
+  </div>
+  <SimulationInfo />
+</Layout>
+
+<style>
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  .animate-blink {
+    animation: blink 1s step-start infinite;
+  }
+</style>
