@@ -1,0 +1,105 @@
+---
+import { CircleQuestionMark, X } from '@lucide/astro';
+---
+
+<details class="group fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-40 pointer-events-auto select-none">
+  <summary
+    class="flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-full border border-border bg-surface/90 text-muted shadow-lg backdrop-blur transition-all duration-200 hover:scale-105 hover:border-accent hover:bg-accent hover:text-white hover:shadow-accent/25 group-open:border-accent group-open:bg-accent group-open:text-white [&::-webkit-details-marker]:hidden"
+    aria-label="What is this background?"
+  >
+    <CircleQuestionMark size={20} aria-hidden="true" />
+  </summary>
+
+  <div class="absolute bottom-12 right-0 w-72 sm:w-80 rounded-2xl border border-border bg-surface p-4 text-xs leading-relaxed text-ink shadow-2xl transition-all">
+    <button
+      type="button"
+      data-sim-close
+      class="absolute right-3 top-3 rounded-lg p-1 text-muted transition-colors hover:bg-accent/10 hover:text-accent"
+      aria-label="Close panel"
+    >
+      <X size={14} aria-hidden="true" />
+    </button>
+
+    <div class="mb-2 flex items-center gap-2 font-mono text-[11px] font-semibold text-accent">
+      <span class="h-2 w-2 rounded-full bg-accent animate-pulse"></span>
+      Reaction-Diffusion Simulation
+    </div>
+
+    <div class="space-y-2 text-[11px] text-muted leading-relaxed" data-sim-description>
+      <p>
+        In 1952, <a
+          href="https://doi.org/10.1098/rstb.1952.0012"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-medium text-accent underline decoration-accent/40 underline-offset-2 hover:decoration-accent"
+          >Alan Turing showed</a
+        > how two diffusing chemicals reacting together can produce biological patterns like zebra stripes and leopard spots.
+      </p>
+
+      <p>
+        This background is a live WebGL2 <a
+          href="https://doi.org/10.1016/0009-2509(83)80132-8"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-medium text-accent underline decoration-accent/40 underline-offset-2 hover:decoration-accent"
+          >Gray–Scott model</a
+        >. Chemical <var class="font-serif italic font-semibold text-ink">U</var> feeds into chemical <var class="font-serif italic font-semibold text-ink">V</var>, forming self-organizing structures.
+      </p>
+
+      <p class="font-medium text-ink/80">
+        Click or drag anywhere on screen to inject chemical <var class="font-serif italic font-semibold text-ink">V</var> into the system.
+      </p>
+    </div>
+
+    <button
+      type="button"
+      data-sim-toggle
+      class="mt-3 flex w-full items-center justify-center rounded-lg border border-accent/20 bg-accent/10 py-1.5 text-[11px] font-semibold text-accent transition-colors hover:bg-accent hover:text-white"
+    >
+      Don't like it? Turn it off
+    </button>
+  </div>
+</details>
+
+<style>
+  summary::marker {
+    content: '';
+  }
+</style>
+
+<script>
+  const SIM_STORAGE_KEY = 'cbus:simulation-enabled';
+
+  const details = document.querySelector<HTMLDetailsElement>('details');
+  const description = document.querySelector('[data-sim-description]');
+  const toggle = document.querySelector<HTMLButtonElement>('[data-sim-toggle]');
+  const closeBtn = document.querySelector<HTMLButtonElement>('[data-sim-close]');
+
+  ['pointerdown', 'pointermove', 'pointerup'].forEach((eventType) => {
+    details?.addEventListener(eventType, (e) => e.stopPropagation());
+  });
+
+  const isEnabled = () => localStorage.getItem(SIM_STORAGE_KEY) !== 'false';
+
+  function render() {
+    if (!toggle || !description) return;
+    if (isEnabled()) {
+      toggle.textContent = "Don't like it? Turn it off";
+    } else {
+      toggle.textContent = 'Turn background back on';
+    }
+  }
+
+  closeBtn?.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (details) details.open = false;
+  });
+
+  toggle?.addEventListener('click', (e) => {
+    e.preventDefault();
+    localStorage.setItem(SIM_STORAGE_KEY, isEnabled() ? 'false' : 'true');
+    location.reload();
+  });
+
+  render();
+</script>

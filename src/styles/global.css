@@ -1,1 +1,30 @@
 @import "tailwindcss";
+
+@import "@fontsource/newsreader/400.css";
+@import "@fontsource/newsreader/600.css";
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/jetbrains-mono";
+
+:root {
+  --color-bg: #faf8f6;
+  --color-surface: #ffffff;
+  --color-border: #e8e4df;
+  --color-text: #1a1817;
+  --color-text-muted: #75706b;
+  --color-accent: #a94545;
+  --color-accent-soft: #fbf0f0;
+}
+
+@theme {
+  --color-bg: var(--color-bg);
+  --color-surface: var(--color-surface);
+  --color-border: var(--color-border);
+  --color-ink: var(--color-text);
+  --color-muted: var(--color-text-muted);
+  --color-accent: var(--color-accent);
+  --color-accent-soft: var(--color-accent-soft);
+
+  --font-serif: "Newsreader", serif;
+  --font-sans: "Inter Variable", sans-serif;
+  --font-mono: "JetBrains Mono Variable", monospace;
+}
