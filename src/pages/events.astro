@@ -19,10 +19,10 @@ const events = allEvents
 >
   <header class="mb-10 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
     <div>
-      <h1 class="font-serif text-3xl font-medium text-ink sm:text-4xl">
+      <h1 class="font-serif text-5xl font-medium text-ink sm:text-6xl">
         Events
       </h1>
-      <p class="mt-2 text-sm text-muted">
+      <p class="mt-2 text-lg text-muted">
         Upcoming socials, workshops, and academic events.
       </p>
     </div>
@@ -31,9 +31,9 @@ const events = allEvents
       href=""
       target="_blank"
       rel="noopener noreferrer"
-      class="inline-flex w-fit items-center gap-2 rounded-lg border border-ink/10 bg-surface/40 px-3 py-1.5 text-xs font-medium text-ink transition-all hover:border-accent/40 hover:bg-surface hover:text-accent"
+      class="inline-flex w-fit items-center gap-2 rounded-lg border border-ink/10 bg-surface/40 px-3 py-1.5 text-base font-medium text-ink transition-all hover:border-accent/40 hover:bg-surface hover:text-accent"
     >
-      <IconCalendar size={14} />
+      <IconCalendar size={18} />
       <span>Subscribe to Calendar</span>
     </a>
   </header>
@@ -45,6 +45,6 @@ const events = allEvents
       ))}
     </div>
   ) : (
-    <p class="text-sm text-muted">No upcoming events right now. Check back soon!</p>
+    <p class="text-lg text-muted">No upcoming events right now. Check back soon!</p>
   )}
 </Layout>
