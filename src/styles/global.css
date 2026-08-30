@@ -28,4 +28,6 @@
   --font-serif: "Newsreader", serif;
   --font-sans: "Inter Variable", sans-serif;
   --font-mono: "JetBrains Mono Variable", monospace;
+
+  --breakpoint-xs: 480px;
 }
