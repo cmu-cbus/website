@@ -5,8 +5,8 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://cmu-cbus.github.io",
-  base: "/website",
+  site: "https://cmu-cbus.org",
+  base: "/",
   prefetch: {
     prefetchAll: true,
     defaultStrategy: 'hover',
