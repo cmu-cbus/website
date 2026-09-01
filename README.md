@@ -23,12 +23,12 @@ url = "https://..."
 ```toml
 name = "Jane Doe"
 role = "President"
-image = "/images/board/jane.jpg"
+image = "/board/jane.jpg"
 bio = "Jane is a junior studying..."
 priority = 10
-coffeeChat = "https://calendly.com/..."
+coffeeChat = "[https://calendly.com/](https://calendly.com/)..."
 ```
-`priority` sorts highest first. `email`, `linkedin`, `github`, `website` are all optional.
+`priority` sorts highest first. `email`, `linkedin`, `github`, `website` are all optional. Images for board members should be placed in `public/board/`.
 
 **Resources** — `.md` file in `src/content/resources/`
 ```markdown
@@ -41,6 +41,10 @@ description: "How to plan your CB course sequence."
 ---
 ```
 `section` groups items on the page. Skip `url` if the page content itself is the resource.
+
+## Contributing
+
+Please follow [Conventional Commits](https://www.conventionalcommits.org/) for your commit messages (e.g., `feat: add new board member`, `fix: update event date`).
 
 ## Missing something?
 
