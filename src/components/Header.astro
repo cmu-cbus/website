@@ -1,23 +1,24 @@
 ---
 import { Image } from "astro:assets";
 import logo from "../assets/logo.png";
+const base = import.meta.env.BASE_URL;
 
 const navItems = [
-  { label: "Home", href: "/" },
-  { label: "Events", href: "/events" },
-  { label: "Board", href: "/board" },
-  { label: "Resources", href: "/resources" },
+  { label: "Home", href: base },
+  { label: "Events", href: `${base}/events` },
+  { label: "Board", href: `${base}/board` },
+  { label: "Resources", href: `${base}/resources` },
 ];
 
 const currentPath = Astro.url.pathname;
 
 const isActive = (href: string) =>
-  href === "/" ? currentPath === "/" : currentPath.startsWith(href);
+  href === base ? currentPath === base : currentPath.startsWith(href);
 ---
 
 <header class="top-0 z-50 w-full border-b border-border/40">
   <div class="mx-auto flex flex-col items-center gap-4 pt-6 pb-4">
-    <a href="/" class="transition-opacity hover:opacity-85">
+    <a href={base} class="transition-opacity hover:opacity-85">
       <Image
         src={logo}
         alt="CBUS Logo"
