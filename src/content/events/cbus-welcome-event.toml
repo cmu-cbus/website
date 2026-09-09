@@ -1,0 +1,36 @@
+title = "CBUS Welcome Event"
+date = 2026-09-10
+time = "5–7 PM"
+location = "GHC 3"
+locationDetails = "Patio and volleyball courts outside La Prima"
+
+description = """
+Please join us to welcome new undergraduates and welcome back upperclassmen to the
+Computational Biology Undergraduate Society!
+
+Anyone interested in computational biology is welcome! There will be plenty of
+people around to give advice and share their knowledge.
+"""
+
+rsvpNote = """
+Please try to RSVP by Monday, September 7 so we can plan enough food and guarantee
+you a ticket for the CBUS merch raffle. There’s no hard deadline to RSVP.
+Let us know in the form if there are other resources you’d like us to bring!
+"""
+
+[[highlights]]
+title = "Free food & candy DNA"
+description = """
+For dessert, we’ll have candy DNA that you get to build yourself.
+"""
+
+[[highlights]]
+title = "Research, classes & more"
+description = """
+We’ll have plenty of resources available about research, classes, future events,
+and more.
+"""
+
+[[links]]
+text = "RSVP"
+url = "https://forms.gle/v8BGoDXAoYteyBqv7"

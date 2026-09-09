@@ -11,13 +11,19 @@ title = "Genomics Speaker Series"
 date = 2026-10-14
 time = "6:00 PM"
 location = "GHC 4303"
+locationDetails = "Fourth floor of Gates Hillman Center"
 description = "A talk on..."
-tags = ["academic"]
+rsvpNote = "Please RSVP so we can plan refreshments."
+
+[[highlights]]
+title = "Discussion"
+description = "Meet the speaker after the talk."
 
 [[links]]
 text = "RSVP"
 url = "https://..."
 ```
+`locationDetails`, `rsvpNote`, `highlights`, and `links` are optional. Keep event fields before the `[[highlights]]` and `[[links]]` blocks.
 
 **Board** — `.toml` file in `src/content/board/`
 ```toml

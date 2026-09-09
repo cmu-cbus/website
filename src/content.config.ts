@@ -9,8 +9,13 @@ const events = defineCollection({
     date: z.date(),
     time: z.string(),
     location: z.string(),
+    locationDetails: z.string().optional(),
     description: z.string(),
-    tags: z.array(z.string()).optional(),
+    highlights: z.array(z.object({
+      title: z.string(),
+      description: z.string(),
+    })).optional(),
+    rsvpNote: z.string().optional(),
     links: z.array(
       z.object({
         text: z.string(),
