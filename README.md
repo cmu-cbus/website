@@ -46,6 +46,10 @@ description: "How to plan your CB course sequence."
 
 Please follow [Conventional Commits](https://www.conventionalcommits.org/) for your commit messages (e.g., `feat: add new board member`, `fix: update event date`).
 
+To maintain a linear history, do not use `git merge` when updating your local branch or pulling target changes. Always use `git rebase` (or `git pull --rebase`). We only accept **Squash and merge** or **Rebase and merge** when closing pull requests into the main branch. 
+
+Each commit should also be atomic, meaning it represents a single, isolated logical change. Avoid mixing unrelated refactoring, bug fixes, and new features into one commit so changes stay easy to review, test, debug, and revert if necessary.
+
 ## Missing something?
 
 Open a PR, or ask a board member.
