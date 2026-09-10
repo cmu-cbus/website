@@ -4,12 +4,16 @@ import { getCollection } from 'astro:content';
 import EventCard from '../components/EventCard.astro';
 import { IconCalendar } from '@tabler/icons-astro';
 
-const today = new Date();
-today.setHours(0, 0, 0, 0);
+const today = new Date().toLocaleDateString('en-CA', {
+  timeZone: 'America/New_York',
+  year: 'numeric',
+  month: '2-digit',
+  day: '2-digit',
+});
 
 const allEvents = await getCollection('events');
 const events = allEvents
-  .filter((event) => new Date(event.data.date) >= today)
+  .filter((event) => event.data.date.toISOString().slice(0, 10) >= today)
   .sort((a, b) => new Date(a.data.date).getTime() - new Date(b.data.date).getTime());
 ---
 
