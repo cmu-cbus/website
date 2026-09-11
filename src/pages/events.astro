@@ -4,17 +4,13 @@ import { getCollection } from 'astro:content';
 import EventCard from '../components/EventCard.astro';
 import { IconCalendar } from '@tabler/icons-astro';
 
-const today = new Date().toLocaleDateString('en-CA', {
-  timeZone: 'America/New_York',
-  year: 'numeric',
-  month: '2-digit',
-  day: '2-digit',
-});
+const [month, day, year] = new Date()
+  .toLocaleDateString('en-US', { timeZone: 'America/New_York' }).split('/').map(Number);
+const today = Date.UTC(year, month - 1, day);
 
-const allEvents = await getCollection('events');
-const events = allEvents
-  .filter((event) => event.data.date.toISOString().slice(0, 10) >= today)
-  .sort((a, b) => new Date(a.data.date).getTime() - new Date(b.data.date).getTime());
+const events = (await getCollection('events'))
+  .filter(({ data }) => data.date.getTime() >= today)
+  .sort((a, b) => a.data.date.getTime() - b.data.date.getTime());
 ---
 
 <Layout
@@ -42,13 +38,27 @@ const events = allEvents
     </a>
   </header>
 
-  {events.length > 0 ? (
-    <div class="grid gap-6">
-      {events.map((event) => (
-        <EventCard {...event.data} />
-      ))}
-    </div>
-  ) : (
-    <p class="text-lg text-muted">No upcoming events right now. Check back soon!</p>
-  )}
+  <div class="grid gap-6">
+    {events.map(({ data }) => (
+      <div data-event-date={data.date.getTime()}>
+        <EventCard {...data} />
+      </div>
+    ))}
+  </div>
+  <p data-events-empty hidden={events.length > 0} class="text-lg text-muted">No upcoming events right now. Check back soon!</p>
 </Layout>
+
+<script>
+  const [month, day, year] = new Date()
+    .toLocaleDateString('en-US', { timeZone: 'America/New_York' }).split('/').map(Number);
+  const today = Date.UTC(year, month - 1, day);
+  let hasUpcomingEvents = false;
+
+  for (const event of document.querySelectorAll<HTMLElement>('[data-event-date]')) {
+    event.hidden = Number(event.dataset.eventDate) < today;
+    hasUpcomingEvents ||= !event.hidden;
+  }
+
+  const emptyState = document.querySelector<HTMLElement>('[data-events-empty]');
+  if (emptyState) emptyState.hidden = hasUpcomingEvents;
+</script>
