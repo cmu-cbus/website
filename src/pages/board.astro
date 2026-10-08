@@ -8,7 +8,8 @@ const boardMembers = allMembers.sort((a, b) => {
   if (b.data.priority !== a.data.priority) {
     return b.data.priority - a.data.priority;
   }
-  return a.data.name.localeCompare(b.data.name);
+  return a.data.role.localeCompare(b.data.role)
+    || a.data.name.localeCompare(b.data.name);
 });
 ---
 

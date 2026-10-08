@@ -32,9 +32,9 @@ role = "President"
 image = "/board/jane.jpg"
 bio = "Jane is a junior studying..."
 priority = 10
-coffeeChat = "[https://calendly.com/](https://calendly.com/)..."
+coffeeChat = "https://calendly.com/jane/30min"
 ```
-`priority` sorts highest first. `email`, `linkedin`, `github`, `website` are all optional. Images for board members should be placed in `public/board/`.
+`priority` sorts highest first, followed by role and then name alphabetically. Use the same priority for members sharing a role to keep them together. `coffeeChat`, `email`, `linkedin`, `github`, `website` are all optional. Omit `coffeeChat` when scheduling by email; the card will only show a Coffee Chat button when a link is provided. Images for board members should be placed in `public/board/`.
 
 **Resources** — `.md` file in `src/content/resources/`
 ```markdown
