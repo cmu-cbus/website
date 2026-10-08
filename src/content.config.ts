@@ -33,7 +33,7 @@ const board = defineCollection({
     image: z.string(),
     bio: z.string(),
     priority: z.number().default(0),
-    coffeeChat: z.url(),
+    coffeeChat: z.url().optional(),
     email: z.email().optional(),
     linkedin: z.url().optional(),
     github: z.url().optional(),

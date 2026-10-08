@@ -1,0 +1,8 @@
+name = "Mia Sanborn"
+role = "Co-President"
+bio = "Hi, I'm Mia and I'm a current senior in Computational Biology! I originally came to CMU with the plan to study Computer Science but after taking an intro to Comp Bio class my senior spring I was hooked and never looked back. Since then as part of the Carja Lab I've completed my honors thesis on how population structure impacts evolution and diversity!  Last summer I completed an internship at Broad Institute where I worked on improving an SVM for classifying mutations in tumor DNA. Outside of research and classes I'm also involved TA-ing, Ultimate Frisbee and chilling with my cats!  Feel free to reach out any time to chat about anything, I'm a big yapper :)"
+coffeeChat = "https://calendly.com/msanborn-andrew/30min"
+email = "msanborn@andrew.cmu.edu"
+linkedin = "https://www.linkedin.com/in/miazsanborn/"
+image = "/board/mia-sanborn.webp"
+priority = 10
