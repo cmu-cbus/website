@@ -1,0 +1,22 @@
+title = "CBUS Internship Panel"
+date = 2026-10-08
+time = "5-6 PM"
+location = "Room TBD"
+
+description = """
+The Computational Biology Undergraduate Society (CBUS), together with MSCB, is
+excited to host this year's Internship Panel! Hear a wide range of experiences,
+from software engineers to research assistants.
+
+Come hear from computational biology students (both master's students and
+undergraduates) who have held internship positions, ask questions, and get advice!
+Food will be provided.
+"""
+
+rsvpNote = """
+Please RSVP by Tuesday, October 6 at 12:00 PM (noon) so we can order enough food!
+"""
+
+[[links]]
+text = "RSVP"
+url = "https://forms.gle/TFeqoGkMZvv7fexy8"
