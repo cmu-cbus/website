@@ -9,7 +9,11 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*": "prettier --check --ignore-unknown"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
@@ -27,8 +31,12 @@
     "esbuild": true
   },
   "devDependencies": {
+    "@commitlint/cli": "^21.2.4",
+    "@commitlint/config-conventional": "^21.2.4",
     "@faker-js/faker": "^10.6.0",
     "@tailwindcss/typography": "^0.5.20",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.6.0",
     "prettier": "^3.9.6",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.8.1",
