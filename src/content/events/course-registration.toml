@@ -1,0 +1,21 @@
+title = "CBUS Course Registration Event"
+date = 2026-11-12
+time = "6–7:30 PM"
+location = "GHC 6"
+locationDetails = "SCS Collaborative Commons"
+
+description = """
+The Computational Biology Undergraduate Society (CBUS) is hosting our biannual
+course registration event to help you plan for Spring 2027 and beyond!
+
+Come hear from upperclassmen about computational biology courses, ask questions,
+and get advice on scheduling and choosing classes. Food will be provided.
+"""
+
+rsvpNote = """
+Please RSVP so we can order enough food for everyone!
+"""
+
+[[links]]
+text = "RSVP"
+url = "https://forms.gle/xP28GZXMXKxzkoeXA"
