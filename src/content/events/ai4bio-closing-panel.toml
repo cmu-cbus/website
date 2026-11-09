@@ -4,15 +4,24 @@ time = "2:45–3:30 PM"
 location = "Tepper Simmons Auditorium B"
 
 description = """
-CBUS is cohosting the closing panel of the AI4BIO Symposium! Hear from symposium
-speakers about how AI will transform discovery and how students can prepare for
-the future, including emerging opportunities, challenges, and career paths.
+"The Future of Computational Biology in the Era of AI" is the closing panel of
+CMU's AI4BIO Symposium, run together with CBUS. Speakers from CMU, Anthropic, MIT,
+Berkeley and beyond will talk about how AI is changing biological discovery and
+how students can prepare for the careers it is creating.
 
-All panel questions will come from undergraduates. You do not need to be
-registered for the symposium to attend!
+Please send us your questions. The panel opens with questions from CB undergrads,
+and the organizers are building the conversation around what you send. This is
+your chance to steer what some of the leading people in the field say about your
+future, in front of the whole symposium.
+
+Ask the thing you actually worry about. "Will AI make college obsolete?" is fair
+game. The bolder the questions, the better the panel.
+
+This event is in person only. You do not need to be registered for the symposium
+to attend.
 """
 
-rsvpNote = "Please RSVP and submit your questions through the registration form."
+rsvpNote = "Please get your questions in ASAP. Room is limited, so register soon."
 
 [[links]]
 text = "RSVP & Submit Questions"
