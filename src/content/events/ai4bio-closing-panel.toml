@@ -1,0 +1,19 @@
+title = "Panel: The Future of Computational Biology in the Era of AI"
+date = 2026-11-13
+time = "2:45–3:30 PM"
+location = "Tepper Simmons Auditorium B"
+
+description = """
+CBUS is cohosting the closing panel of the AI4BIO Symposium! Hear from symposium
+speakers about how AI will transform discovery and how students can prepare for
+the future, including emerging opportunities, challenges, and career paths.
+
+All panel questions will come from undergraduates. You do not need to be
+registered for the symposium to attend!
+"""
+
+rsvpNote = "Please RSVP and submit your questions through the registration form."
+
+[[links]]
+text = "RSVP & Submit Questions"
+url = "https://docs.google.com/forms/d/e/1FAIpQLSfkaowF1Oa2fHtCtUYT5c8iwJpFU3jBnf2mYOpF41ULG4zNmQ/viewform"
