@@ -1,0 +1,41 @@
+title = "Grad School Seminar"
+date = 2026-11-17
+time = "5 PM"
+location = "Gates Hillman Center"
+locationDetails = "Room TBD (we’ll share the room later)"
+
+description = """
+Thinking about grad school, or not sure if it’s right for you? The Comp Bio
+Undergrad Society is hosting a Grad School Seminar, and we’d love to see you there!
+
+Whether you’re working on applications right now or still deciding if you want to
+apply in the future, join current PhD students and postdocs for an informal
+conversation. They’ll talk honestly about their experiences, and the
+conversation will be driven by your questions!
+
+We’ll run it as a roundtable or Q&A depending on turnout. We’re expecting around
+20 people, so the group will be small and relaxed. No preparation needed, but
+feel free to bring questions!
+"""
+
+rsvpNote = "Please RSVP by Friday, November 13."
+
+[[highlights]]
+title = "Application tips"
+description = "Personal statements, recommendations, and research experience."
+
+[[highlights]]
+title = "Where to apply"
+description = "Choosing programs that fit your interests and goals."
+
+[[highlights]]
+title = "Whether to apply at all"
+description = "What to consider if you’re on the fence about grad school."
+
+[[highlights]]
+title = "Preparing for the future"
+description = "Steps you can take now to build a strong application."
+
+[[links]]
+text = "RSVP"
+url = "https://forms.gle/sEix3CmTPpM9zger9"
